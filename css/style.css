@@ -1214,7 +1214,7 @@ img {
 .form-feedback-row {
   display: flex;
   justify-content: space-between; 
-  margin-bottom: 32px;
+  margin-bottom: 34px;
 
 }
 
@@ -1224,7 +1224,7 @@ img {
 
 .form-feedback-row label {
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   font-size: 16px;
   line-height: 18px;
   font-weight: 700;
@@ -1247,17 +1247,55 @@ img {
 }
 
 .form-feedback-message {
-  min-height: 116px;
+  min-height: 119px;
   resize: vertical;
 }
 
 .form-row-message {
   flex-direction: column;
-  margin-bottom: 48px;
+  margin-bottom: 47px;
 } 
 
 .button-form-feedback {
   width: 260px;
   padding: 18px 10px 14px; 
   box-sizing: border-box;
+}
+
+.feedback-close {
+  position: absolute; 
+  top: 78px;
+  right: 88px;
+  width: 25px;
+  height: 25px;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+
+  cursor: pointer; 
+ opacity: 0.3;
+ 
+}
+
+
+.feedback-close:before,
+.feedback-close:after {
+  position: absolute;
+  content: "";  
+    width: 5px;
+  height: 25px;
+  top: 0;
+  right: 10px;
+ 
+
+  background-color: #fb565a;
+}
+
+
+.feedback-close:before { 
+   transform: rotate(45deg);
+}
+
+.feedback-close:after { 
+  transform: rotate(-45deg);
 }

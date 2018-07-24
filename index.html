@@ -193,9 +193,29 @@
   </div>
 </div>
 </footer>
-<form class="form-feedback">
-  <!-- Здесь будет форма -->
+<form class="form-feedback" action="https://echo.htmlacademy.ru" method="post"> 
+  <h2 class="form-feedback-caption">Напишите нам</h2>
+  <div class="form-feedback-row">
+    <div class="form-feedback-column">
+      <label for="username">Ваше имя:</label>
+      <input class="form-feedback-text" type="text" name="username" id="username" placeholder="Имя Фамилия" required>
+    </div>
+    <div class="form-feedback-column">
+      <label for="e-mail">Ваш e-mail:</label>
+      <input class="form-feedback-text" type="email" name="e-mail" id="e-mail" placeholder="email@example.com" required>
+    </div>
+  </div>
+  <div class="form-feedback-row form-row-message">
+    <label for="message">Текст письма:</label>
+    <textarea class="form-feedback-text form-feedback-message" name="message" id="message" placeholder="В свободной форме"></textarea> 
+  </div>
+  <button class="button button-form-feedback button-pink" type="submit">Отправить</button>
+  <button class="feedback-close">
+    <span class="visually-hidden">закрыть</span>
+  </button>
 </form>
+
+<script src="js/popup.js"></script>
 
 </body>
 </html>
