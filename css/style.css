@@ -315,6 +315,8 @@ img {
   background-position: 100% 20px;
 }
 
+
+
 .slider-title {
   max-width: 600px;
   margin: 0;
@@ -562,17 +564,33 @@ img {
   position: relative;
   height: 416px;
   overflow: hidden;
+
+}
+
+.map-image, 
+.map-interactive {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
 }
 
 .map-image {
-  position: absolute;
-  content: "";
+  z-index: 5;
+  width: 1440px;
+  height: 416px;
+ 
+}
+
+.map-interactive {
   z-index: 10;
   width: 1440px;
   height: 416px;
-  left: 50%;
-  top: 0;
-  transform: translateX(-50%);
+ 
+}
+
+.map-interactive iframe {
+  border: 0;
 }
 
 .contacts-wrapper {
@@ -1190,13 +1208,16 @@ img {
 
 
 .form-feedback {
-  position: absolute;
-  content: "";
+  position: fixed; 
+      visibility: hidden;
+      z-index: 100;
   width: 960px;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   
   padding: 69px 100px 84px;
+  background-color: #ffffff;
   box-sizing: border-box;
   box-shadow: 0 20px 40px 0 rgba(0, 1, 1, 0.75);
 } 
@@ -1246,6 +1267,15 @@ img {
  box-sizing: border-box;
 }
 
+.form-feedback-text:hover {
+  border-color: #b4b9bb;
+}
+
+.form-feedback-text:focus {
+  color: #444;
+    border-color: #000;
+    outline: 0;
+}
 .form-feedback-message {
   min-height: 119px;
   resize: vertical;
@@ -1298,4 +1328,54 @@ img {
 
 .feedback-close:after { 
   transform: rotate(-45deg);
+}
+
+.modal-show {
+  display: block;
+  visibility: visible;
+  animation: bounce 0.6s;
+}
+
+.modal-close {
+  display: none;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translate(-200%,-50%);
+  }
+
+  
+  100% {
+    transform: translate(-50%,-50%);
+    visibility: visible;
+  }
+}
+
+
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-10px);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(10px);
+  }
+}
+
+.modal-error {
+  animation: shake 0.6s;
 }
